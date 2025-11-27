@@ -1,0 +1,21 @@
+<h1>Movies Lists</h1>
+
+<%= link_to "Create a list", new_list_path, class: "btn btn-primary" %>
+
+<div class="row">
+  <% @lists.each do |list| %>
+    <div class="col-12 col-md-4 mb-4">
+
+      <div class="card h-100">
+        <img class="card-img-top" src="<%= list.image_url %>" alt="<%= list.name %>" style="height: 200px; object-fit: cover;">
+
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= link_to list.name, list_path(list), class: "text-decoration-none text-dark stretched-link" %>
+          </h5>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+</div>
