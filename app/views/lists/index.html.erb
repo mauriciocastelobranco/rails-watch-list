@@ -1,21 +1,27 @@
 <h1>Movies Lists</h1>
 
 <%= link_to "Create a list", new_list_path, class: "btn btn-primary" %>
+<div class="container py-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @lists.each do |list| %>
+      <div class="col">
 
-<div class="row">
-  <% @lists.each do |list| %>
-    <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-0 transition-hover">
+          <img class="card-img-top" src="<%= list.image_url %>" alt="<%= list.name %>" style="max-height: 400px; object-fit: contain;">
 
-      <div class="card h-100">
-        <img class="card-img-top" src="<%= list.image_url %>" alt="<%= list.name %>" style="height: 200px; object-fit: cover;">
-
-        <div class="card-body">
-          <h5 class="card-title">
-            <%= link_to list.name, list_path(list), class: "text-decoration-none text-dark stretched-link" %>
-          </h5>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-center my-3">
+              <%= link_to list.name, list_path(list), class: "text-decoration-none text-dark stretched-link" %>
+            </h5>
+          </div>
+          <div class="card-footer bg-transparent text-end">
+            <%= button_to list_path(list), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-link text-danger text-decoration-none p-0 position-relative z-2" do %>
+              <i class="fa-solid fa-trash-can"></i>
+            <% end %>
+          </div>
         </div>
-      </div>
 
-    </div>
-  <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

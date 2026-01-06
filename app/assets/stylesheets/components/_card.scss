@@ -1,13 +1,14 @@
 .card-product {
   overflow: hidden;
   height: 120px;
+  width: 10px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
 }
 
-.card-product img {
+.card-product-img {
   height: 100%;
   width: 120px;
   object-fit: cover;
@@ -29,4 +30,12 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.transition-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.transition-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
 }
