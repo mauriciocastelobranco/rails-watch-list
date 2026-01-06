@@ -26,5 +26,4 @@ Things you may want to cover:
 Fazer amanhã:
 - Ajustar os layouts das páginas
 - Navbar
-- Adicionar login com devise
 - Adicionar área de comentários nas listas

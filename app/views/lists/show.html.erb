@@ -13,7 +13,7 @@
         <div class="card h-100 shadow-sm border-0 transition-hover"> <img class="card-img-top" src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %>" style="max-height: 400px; object-fit: contain;">
 
           <div class="card-body" data-controller="read-more">
-            <h5 class="card-title"><strong><%= bookmark.movie.title %></strong></h5>
+            <h5 class="card-title"><strong><%= bookmark.movie.title %></strong><p class="card-text"><em><%= bookmark.movie.rating %>⭐</em></p></h5>
             <p class="card-text" data-read-more-target="short">
             <%= bookmark.movie.overview.truncate(100) %>
 
@@ -37,7 +37,7 @@
               Read less <i class="fa-solid fa-caret-up"></i>
             </span>
           </p>
-            <p class="card-text"><em>"IMDB rating: <%= bookmark.movie.rating %>⭐"</em></p>
+
             <hr>
             <p class="card-text"><em>"<%= bookmark.comment %>"</em></p>
           </div>
